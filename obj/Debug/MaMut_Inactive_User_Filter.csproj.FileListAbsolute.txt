@@ -1,0 +1,17 @@
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\MaMut_Inactive_User_Filter.exe.config
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\MaMut_Inactive_User_Filter.exe
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\MaMut_Inactive_User_Filter.pdb
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.csprojAssemblyReference.cache
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.Properties.Resources.resources
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.csproj.GenerateResource.cache
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.csproj.CoreCompileInputs.cache
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.exe
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.pdb
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.dll
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.pdb
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.xml
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.csproj.CopyComplete
+C:\Users\LoD-RoG\source\repos\MaMut_Inactive_User_Filter\obj\Debug\MaMut_Inactive_User_Filter.Form1.resources
