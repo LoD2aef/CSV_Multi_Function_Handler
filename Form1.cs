@@ -23,15 +23,15 @@ namespace MaMut_Inactive_User_Filter {
         }
         private void Form1_Load(object sender, EventArgs e) { 
         }
-        private void Button1_Click(object sender, EventArgs e) {  
+        private void MainSelectFile_Click(object sender, EventArgs e) {  
             FindItem(1); 
             EnabledOrNotLocation(); 
         }
-        private void Button2_Click(object sender, EventArgs e) { 
+        private void SecondSelectFile_Click(object sender, EventArgs e) { 
             FindItem(2); 
             EnabledOrNotLocation(); 
         }
-        private void Button4_Click(object sender, EventArgs e) { 
+        private void DeleteSelect_Click(object sender, EventArgs e) { 
             Cursor.Current = Cursors.WaitCursor; 
             string path_Name_Type = (PathNewFile + "\\" + "MaMutUdenInactiveUser");
             FileWriter(path_Name_Type, FieldsName);
@@ -50,7 +50,7 @@ namespace MaMut_Inactive_User_Filter {
             progressBar1.Maximum = 100;
         }
 
-        private void Button5_Click(object sender, EventArgs e) { 
+        private void EndProgram_Click(object sender, EventArgs e) { 
             Close();
         }
         private void FindItem(int a) { 

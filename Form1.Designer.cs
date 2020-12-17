@@ -67,7 +67,7 @@
             this.MainSelectFile.TabIndex = 2;
             this.MainSelectFile.Text = "Select File";
             this.MainSelectFile.UseVisualStyleBackColor = true;
-            this.MainSelectFile.Click += new System.EventHandler(this.Button1_Click);
+            this.MainSelectFile.Click += new System.EventHandler(this.MainSelectFile_Click);
             // 
             // SecondSelectFile
             // 
@@ -77,7 +77,7 @@
             this.SecondSelectFile.TabIndex = 3;
             this.SecondSelectFile.Text = "Select File";
             this.SecondSelectFile.UseVisualStyleBackColor = true;
-            this.SecondSelectFile.Click += new System.EventHandler(this.Button2_Click);
+            this.SecondSelectFile.Click += new System.EventHandler(this.SecondSelectFile_Click);
             // 
             // MainFileName
             // 
@@ -106,7 +106,7 @@
             this.DeleteSelect.TabIndex = 9;
             this.DeleteSelect.Text = "Delete Select";
             this.DeleteSelect.UseVisualStyleBackColor = true;
-            this.DeleteSelect.Click += new System.EventHandler(this.Button4_Click);
+            this.DeleteSelect.Click += new System.EventHandler(this.DeleteSelect_Click);
             // 
             // openFileDialog1
             // 
@@ -154,7 +154,7 @@
             this.EndProgram.TabIndex = 16;
             this.EndProgram.Text = "Luk Program";
             this.EndProgram.UseVisualStyleBackColor = true;
-            this.EndProgram.Click += new System.EventHandler(this.Button5_Click);
+            this.EndProgram.Click += new System.EventHandler(this.EndProgram_Click);
             // 
             // progressBar1
             // 
