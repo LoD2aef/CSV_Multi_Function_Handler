@@ -37,8 +37,10 @@ namespace MaMut_Inactive_User_Filter {
             FileWriter(path_Name_Type, FieldsName);
             string[] ExcelRows = ReadLines(FilePathCSV1);
             progressBar1.Maximum = ExcelRows.Length;
+            // this is okey if only it was not a nest loop
             for (int i = 1; i < ExcelRows.Length; i++) {
                 progressBar1.Value = i;
+                // need more logic. mabye splite some function out in classes, and dif filewriter calls 
                 string[] data = ExcelRows[i].Split(';');
                 /*
                  MessageBox.Show(data[0]);
@@ -144,6 +146,7 @@ namespace MaMut_Inactive_User_Filter {
                 DeleteSelect.Enabled = true;
             }
         }
+        // this is bad!
         private bool DeleteThisRow(string[] searchDataTerm, int positionOfSearchTerm, string filePath) {
             try {
                 string[] lines = ReadLines(filePath);
