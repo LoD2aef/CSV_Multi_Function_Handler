@@ -48,12 +48,13 @@ namespace MaMut_Inactive_User_Filter {
                 if (!demo) {
                     FileWriter(path_Name_Type, data);
                 }
-                */
+                
                 //MessageBox.Show(ExcelRows.Length.ToString());
                 AddParaToIt(data, SecondComparePoint.SelectedIndex, FilePathCSV2, path_Name_Type);
                 if (!(data[34] == "x" || data[33] == "1")) {
                     FileWriter(path_Name_Type, data);
                 }
+                */
             }
             MessageBox.Show("File er lavet");
             progressBar1.Value = 0;
@@ -147,13 +148,32 @@ namespace MaMut_Inactive_User_Filter {
             }
         }
         // this is bad!
-        private bool DeleteThisRow(string[] searchDataTerm, int positionOfSearchTerm, string filePath) {
+        private bool DeleteThisRow(string[] FileStringData, int positionOfSearchTerm, string SecendFileFilePath) {
             try {
-                string[] lines = ReadLines(filePath);
+                string[] lines = ReadLines(SecendFileFilePath);
                 for (int i = 0; i < lines.Length; i++) {
                     string[] fields = lines[i].Split(';');
                     if (fields.Length > positionOfSearchTerm) {
-                        if (fields[positionOfSearchTerm].Equals(searchDataTerm[MainComparePoint.SelectedIndex])) {
+                        if (fields[positionOfSearchTerm].Equals(FileStringData[MainComparePoint.SelectedIndex])) {
+                            return true;
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                throw new ApplicationException("error :", ex);
+            }
+            return false;
+        }
+        
+        private bool DeleteThisRow2Para(string[] FileStringData, int positionOfSearchTerm, string SecendFileFilePath) {
+            try {
+                string[] lines = ReadLines(SecendFileFilePath);
+                for (int i = 0; i < lines.Length; i++) {
+                    string[] fields = lines[i].Split(';');
+                    if (fields.Length > positionOfSearchTerm) {
+                        string filter2 = FileStringData[7] + ", " + FileStringData[6];
+                        //MessageBox.Show(filter2 + " - " + fields[1] + " return : " + fields[1].Equals(filter2));
+                        if (fields[positionOfSearchTerm].Equals(FileStringData[MainComparePoint.SelectedIndex]) && fields[1].Equals(filter2)) {
                             return true;
                         }
                     }
@@ -164,21 +184,21 @@ namespace MaMut_Inactive_User_Filter {
             return false;
         }
         // THIS IS BAD!!!!
-        private void AddParaToIt(string[] searchDataTerm, int positionOfSearchTerm, string filePath, string path_Name_Type) {
+        private void AddParaToIt(string[] FileStringData, int positionOfSearchTerm, string SecendFileFilePath, string path_Name_Type) {
             try {
-                string[] lines = ReadLines(filePath);
+                string[] lines = ReadLines(SecendFileFilePath);
                 for (int i = 0; i < lines.Length; i++) {
                     string[] fields = lines[i].Split(';'); //fields is secfile
-                    if (searchDataTerm.Length >= 36) {
-                        if (fields[positionOfSearchTerm].Equals(searchDataTerm[MainComparePoint.SelectedIndex])) {
+                    if (FileStringData.Length >= 36) {
+                        if (fields[positionOfSearchTerm].Equals(FileStringData[MainComparePoint.SelectedIndex])) {
                             bool val = Convert.ToBoolean(fields[6]);
                             if (val) {
-                                searchDataTerm[33] = "1";
-                                searchDataTerm[35] = "Stykliste";
-                                FileWriter(path_Name_Type, searchDataTerm);
+                                FileStringData[33] = "1";
+                                FileStringData[35] = "Stykliste";
+                                FileWriter(path_Name_Type, FileStringData);
                             } else {
-                                searchDataTerm[34] = "x";
-                                FileWriter(path_Name_Type, searchDataTerm);
+                                FileStringData[34] = "x";
+                                FileWriter(path_Name_Type, FileStringData);
                             }
                         }
                     }
@@ -187,24 +207,9 @@ namespace MaMut_Inactive_User_Filter {
                 throw new ApplicationException("error :", ex);
             }
         }
-        
-        private bool DeleteThisRow2Para(string[] searchDataTerm, int positionOfSearchTerm, string filePath) {
-            try {
-                string[] lines = ReadLines(filePath);
-                for (int i = 0; i < lines.Length; i++) {
-                    string[] fields = lines[i].Split(';');
-                    if (fields.Length > positionOfSearchTerm) {
-                        string filter2 = searchDataTerm[7] + ", " + searchDataTerm[6];
-                        //MessageBox.Show(filter2 + " - " + fields[1] + " return : " + fields[1].Equals(filter2));
-                        if (fields[positionOfSearchTerm].Equals(searchDataTerm[MainComparePoint.SelectedIndex]) && fields[1].Equals(filter2)) {
-                            return true;
-                        }
-                    }
-                }
-            } catch (Exception ex) {
-                throw new ApplicationException("error :", ex);
-            }
-            return false;
+        private string[] stringSplitter(string[] stringData) {
+            string[] temp = new string[] { "1", "2" };
+            return temp;
         }
 
         private void FileWriter(string pathNameType, string[] fieldsMain) {
