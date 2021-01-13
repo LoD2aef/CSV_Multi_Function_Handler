@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using ExcelDataReader;
-
+using System.Text.RegularExpressions;
 
 namespace MaMut_Inactive_User_Filter {
     public partial class Form1 : Form {
@@ -207,7 +204,8 @@ namespace MaMut_Inactive_User_Filter {
                 throw new ApplicationException("error :", ex);
             }
         }
-        private string[] stringSplitter(string[] stringData) {
+        private string[] stringSplitter(string stringData) {
+            string[] newLines = Regex.Split(stringData, @"\W+");
             string[] temp = new string[] { "1", "2" };
             return temp;
         }
@@ -229,6 +227,12 @@ namespace MaMut_Inactive_User_Filter {
                 builder.Append(';');
             }
             return builder.ToString();
+        }
+
+        private void WinFormRemoveButton_Click(object sender, EventArgs e) {
+            WinFormRemover wfr = new WinFormRemover();
+            wfr.ShowDialog(); // Maim Form locked, and will push you to wfr instead
+            //wfr.Show(); // Main Form still aktive, could lead to problems, so not vaild
         }
     }
 }

@@ -61,6 +61,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectFile.cs" />
+    <Compile Include="WinFormRemover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormRemover.Designer.cs">
+      <DependentUpon>WinFormRemover.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WinFormRemover.resx">
+      <DependentUpon>WinFormRemover.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -39,6 +39,7 @@
             this.EndProgram = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
+            this.WinFormRemoveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -172,11 +173,22 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Progress";
             // 
+            // WinFormRemoveButton
+            // 
+            this.WinFormRemoveButton.Location = new System.Drawing.Point(15, 178);
+            this.WinFormRemoveButton.Name = "WinFormRemoveButton";
+            this.WinFormRemoveButton.Size = new System.Drawing.Size(102, 23);
+            this.WinFormRemoveButton.TabIndex = 21;
+            this.WinFormRemoveButton.Text = "Remover";
+            this.WinFormRemoveButton.UseVisualStyleBackColor = true;
+            this.WinFormRemoveButton.Click += new System.EventHandler(this.WinFormRemoveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 217);
+            this.Controls.Add(this.WinFormRemoveButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.EndProgram);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Button EndProgram;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button WinFormRemoveButton;
     }
 }
