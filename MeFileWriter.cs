@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace MaMut_Inactive_User_Filter {
-    class FuncFileWriter {
+    class MeFileWriter {
         private void Writer(string pathNameType, string[] fieldsMain) {
             try {
                 using (StreamWriter file = new StreamWriter(pathNameType + ".CSV", true, Encoding.Default)) {

@@ -8,17 +8,16 @@ namespace MaMut_Inactive_User_Filter {
         }
 
         private void MainSelectFile_Click(object sender, EventArgs e) {
-            FuncSelectFile sf = new FuncSelectFile();
-            string[] FileDir = sf.FindItem(); // FileDirectory, FileName, FilePath
-            if (FileDir[0] == "Null") {
-                MessageBox.Show("File was not selected");
+            MeSelectFile MSF = new MeSelectFile(); // make a new instands of the MeSelectFile Class so i can called Method from it.
+            string[] FileDir = MSF.FindItem(); // string array with the values of FileDirectory, FileName, FilePath. from FindItem
+            if (FileDir[0] == "Null") { // check if string return with the value of Null then there was not selected a path.
+                MessageBox.Show("File was not selected"); // Show MSG when no file was slected as a pop-up.
             } else {
-                for (int i = 0; i <= FileDir.Length - 1; i++) {
-                    MessageBox.Show(FileDir[i]);
-                }
-                FuncFileReader FFR = new FuncFileReader();
-                string[] file = FFR.ReadLines(FileDir[0]);
-                MessageBox.Show(file[0]);
+                MainFileName.Text = FileDir[1]; // setting Textbox MainFileName to be the name of the file selected in the OpenFileDialog.
+                MeFileReader FFR = new MeFileReader(); // making a new instand of the MeFileReader Class so i can called Method from it.
+                string[] FileAllLinesRaw = FFR.ReadLines(FileDir[0]); // string array, with all rows as a new string in the array, Columns are in string spilt by (;)
+                MeComboBoxFiller MCBF = new MeComboBoxFiller(); // making a new instand of the MeFileReader Class so i can called Method from it.
+                MCBF.ComboBoxFiller(FileAllLinesRaw[0], MainComparePoint); // Populated ComboBox with first rows of data from the selected file.
             }
         }
     }
