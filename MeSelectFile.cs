@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 namespace MaMut_Inactive_User_Filter {
-    class SelectFile {
+    class FuncSelectFile {
         public string[] FindItem() {
             string[] res;
             using (OpenFileDialog OFD = new OpenFileDialog() {

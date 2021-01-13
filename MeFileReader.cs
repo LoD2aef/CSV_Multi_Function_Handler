@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace MaMut_Inactive_User_Filter {
-    class FileReader {
+    class FuncFileReader {
         public string[] ReadLines(string filePath) {
             try {
                 if (Path.GetExtension(filePath) == ".csv") {
