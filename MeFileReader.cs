@@ -8,13 +8,13 @@ using System.Text;
 
 namespace MaMut_Inactive_User_Filter {
     class MeFileReader {
-        public string[] ReadLines(string filePath) {
-            try {
-                if (Path.GetExtension(filePath) == ".csv") {
-                    string[] lines = File.ReadAllLines(filePath, Encoding.Default);
-                    return lines;
-                } else {
-                    using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read)) {
+        public string[] ReadLines(string filePath) { // returs the files rows as a string array from the the file
+            try { 
+                if (Path.GetExtension(filePath) == ".csv") { // if file is type CSV (Comma-Separated Values)
+                    string[] lines = File.ReadAllLines(filePath, Encoding.Default); // string array where each index is a row from file
+                    return lines; // return string array with rows
+                } else { // if file is not of the ttype CSV file but Excel instead
+                    using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read)) { // gotta read up
                         using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream)) {
                             DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() {
                                 ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
@@ -28,7 +28,7 @@ namespace MaMut_Inactive_User_Filter {
                                 string[] stringRows = dt.Rows[i].ItemArray.Select(x => x.ToString()).ToArray();
                                 string oneRow = string.Join(";", stringRows);
                                 list.Add(oneRow);
-                            }
+                            } //
                             string[] lines = list.ToArray();
                             return lines;
                         }

@@ -9,7 +9,7 @@ namespace MaMut_Inactive_User_Filter {
 
         private void MainSelectFile_Click(object sender, EventArgs e) {
             MeSelectFile MSF = new MeSelectFile(); // make a new instands of the MeSelectFile Class so i can called Method from it.
-            string[] FileDir = MSF.FindItem(); // string array with the values of FileDirectory, FileName, FilePath. from FindItem
+            string[] FileDir = MSF.FindItem(); // string array with the values of FileDirectory, FileName, FilePath. from FindItem.
             if (FileDir[0] == "Null") { // check if string return with the value of Null then there was not selected a path.
                 MessageBox.Show("File was not selected"); // Show MSG when no file was slected as a pop-up.
             } else {
