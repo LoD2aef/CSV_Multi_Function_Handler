@@ -30,22 +30,24 @@ namespace MaMut_Inactive_User_Filter {
         }
         private void DeleteSelect_Click(object sender, EventArgs e) {
             Cursor.Current = Cursors.WaitCursor;
-            string path_Name_Type = (PathNewFile + "\\" + "MaMutUdenInactiveUser");
+            string path_Name_Type = (PathNewFile + "\\" + "missing uniconta");
             FileWriter(path_Name_Type, FieldsName);
             string[] ExcelRows = ReadLines(FilePathCSV1);
             progressBar1.Maximum = ExcelRows.Length;
             // this is okey if only it was not a nest loop
             for (int i = 1; i < ExcelRows.Length; i++) {
                 progressBar1.Value = i;
+                // FileWriter(path_Name_Type,ExcelRows);
                 // need more logic. mabye splite some function out in classes, and dif filewriter calls 
                 string[] data = ExcelRows[i].Split(';');
                 /*
                  MessageBox.Show(data[0]);
+                */
                 bool demo = DeleteThisRow(data, SecondComparePoint.SelectedIndex, FilePathCSV2);
                 if (!demo) {
                     FileWriter(path_Name_Type, data);
                 }
-                
+                /*
                 //MessageBox.Show(ExcelRows.Length.ToString());
                 AddParaToIt(data, SecondComparePoint.SelectedIndex, FilePathCSV2, path_Name_Type);
                 if (!(data[34] == "x" || data[33] == "1")) {
@@ -111,6 +113,9 @@ namespace MaMut_Inactive_User_Filter {
         private string[] ReadLines(string filePath) {
             try {
                 if (Path.GetExtension(filePath) == ".csv") {
+                    string[] lines = File.ReadAllLines(filePath, Encoding.Default);
+                    return lines;
+                } else if (Path.GetExtension(filePath) == ".txt") {
                     string[] lines = File.ReadAllLines(filePath, Encoding.Default);
                     return lines;
                 } else {

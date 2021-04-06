@@ -40,6 +40,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.WinFormRemoveButton = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -183,11 +184,19 @@
             this.WinFormRemoveButton.UseVisualStyleBackColor = true;
             this.WinFormRemoveButton.Click += new System.EventHandler(this.WinFormRemoveButton_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(229, 120);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(143, 20);
+            this.dateTimePicker1.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 217);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.WinFormRemoveButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar1);
@@ -234,5 +243,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button WinFormRemoveButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
